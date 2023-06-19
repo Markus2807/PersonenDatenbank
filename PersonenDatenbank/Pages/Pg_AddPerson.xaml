@@ -2,22 +2,79 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonenDatenbank.Pages.Pg_AddPerson">
+             x:Class="PersonenDatenbank.Pages.Pg_AddPerson"
+             BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10"  VerticalOptions="StartAndExpand" Spacing="10">
             <Label
-                x:Name="lbl_Hello_MAUI"
-                Text="Hello MAUI"
-                   TextColor="Red"
-                   FontAttributes="Bold"
-                   FontSize="Large"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Change Color"
-                    TextColor="White"
-                    BackgroundColor="{x:DynamicResource Primary}"
-                    Pressed="Button_OnClicked"
-                    Released="Button_Released"/>
+                Text="Gib die Daten der neuen Person ein und bestätige die Eingabe"
+                   TextColor="Black"
+                   FontSize="Large"/>
+            
+            <!-- Benutzername -->
+            <Label Text="Name:"
+                   TextColor="DarkGray"
+                   HorizontalOptions="Start"/>
+            
+            <Entry 
+                   x:Name="UserName_Entry"
+                   Placeholder="z.B. Max Mustermann"
+                   PlaceholderColor="DarkGray"
+                   TextColor="Black">
+                
+            </Entry>
+            
+            <!-- Geburtsdatum -->
+            <Label Text="Geburtsdatum:"
+                   TextColor="DarkGray"
+                   HorizontalOptions="Start"/>
+            
+            <DatePicker 
+                   x:Name="UserBirthDate_Picker"
+                   TextColor="Black"
+                   >
+                
+            </DatePicker>
+            
+            <!-- Geschlecht -->
+            <Label Text="Geschlecht:"
+                   TextColor="DarkGray"
+                   HorizontalOptions="Start"/>
+            
+            <Picker 
+                   x:Name="UserSex_Picker"
+                   Title="Wählen Sie bitte ein Geschlecht"
+                   TextColor="Black">
+                <Picker.ItemsSource>
+                       <x:Array Type="{x:Type x:String}">
+                              <x:String>Weiblich</x:String>
+                              <x:String>Männlich</x:String>
+                              <x:String>Keine Angabe</x:String>
+                       </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+                   <!-- Married -->
+                   <Label Text="Verheiratet:"
+                          TextColor="DarkGray"
+                          HorizontalOptions="Start"/>
+                   
+                   <CheckBox 
+                          x:Name="UserIsMerried_Switch"
+                          Color="Black"
+                          HorizontalOptions="End"
+                          >
+                       
+                   </CheckBox>
+            
+            <Button
+                   x:Name="Button_AddEdit"
+                   Text="Hinzufügen/Bearbeiten"
+                   TextColor="White"
+                   BackgroundColor="{x:DynamicResource Primary}"
+                   Clicked="AddModify_Clicked"
+                   VerticalOptions="End"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
