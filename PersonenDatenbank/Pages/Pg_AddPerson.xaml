@@ -5,18 +5,29 @@
              x:Class="PersonenDatenbank.Pages.Pg_AddPerson"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout Margin="10"  VerticalOptions="StartAndExpand" Spacing="10">
+        <Grid
+               RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+               ColumnDefinitions="Auto,*"
+               Margin="20,10" VerticalOptions="StartAndExpand" RowSpacing="5" ColumnSpacing="10">
             <Label
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
                 Text="Gib die Daten der neuen Person ein und bestätige die Eingabe"
                    TextColor="Black"
                    FontSize="Large"/>
             
             <!-- Benutzername -->
-            <Label Text="Name:"
+            <Label 
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Name:"
                    TextColor="DarkGray"
                    HorizontalOptions="Start"/>
             
             <Entry 
+                   Grid.Row="1"
+                   Grid.Column="1"
                    x:Name="UserName_Entry"
                    Placeholder="z.B. Max Mustermann"
                    PlaceholderColor="DarkGray"
@@ -26,11 +37,16 @@
             </Entry>
             
             <!-- Geburtsdatum -->
-            <Label Text="Geburtsdatum:"
+            <Label 
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Geburtsdatum:"
                    TextColor="DarkGray"
                    HorizontalOptions="Start"/>
             
             <DatePicker 
+                   Grid.Row="2"
+                   Grid.Column="1"
                    x:Name="UserBirthDate_Picker"
                    TextColor="Black"
                    >
@@ -38,11 +54,16 @@
             </DatePicker>
             
             <!-- Geschlecht -->
-            <Label Text="Geschlecht:"
+            <Label 
+                   Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Geschlecht:"
                    TextColor="DarkGray"
                    HorizontalOptions="Start"/>
             
             <Picker 
+                   Grid.Row="3"
+                   Grid.Column="1"
                    x:Name="UserSex_Picker"
                    Title="Wählen Sie bitte ein Geschlecht"
                    TextColor="Black">
@@ -55,20 +76,28 @@
                 </Picker.ItemsSource>
             </Picker>
             
-                   <!-- Married -->
-                   <Label Text="Verheiratet:"
-                          TextColor="DarkGray"
-                          HorizontalOptions="Start"/>
+            <!-- Married -->
+            <Label 
+                   Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Verheiratet:"
+                   TextColor="DarkGray"
+                   HorizontalOptions="Start"/>
                    
-                   <CheckBox 
-                          x:Name="UserIsMerried_Switch"
-                          Color="Black"
-                          HorizontalOptions="End"
-                          >
+            <CheckBox 
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   x:Name="UserIsMerried_Switch"
+                   Color="Black"
+                   HorizontalOptions="End"
+                   >
                        
-                   </CheckBox>
+            </CheckBox>
             
             <Button
+                   Grid.Row="5"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
                    x:Name="Button_AddEdit"
                    Text="Hinzufügen/Bearbeiten"
                    TextColor="White"
@@ -76,6 +105,6 @@
                    Clicked="AddModify_Clicked"
                    VerticalOptions="End"/>
             
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
