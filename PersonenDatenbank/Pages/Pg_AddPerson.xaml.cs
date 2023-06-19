@@ -12,4 +12,11 @@ public partial class Pg_AddPerson : ContentPage
     {
         
     }
+
+    private void OnUserName_Completed(object Sender, EventArgs E)
+    {
+       /// Set the new focus to the Birthday DatePicker
+       ///
+       
+    }
 }

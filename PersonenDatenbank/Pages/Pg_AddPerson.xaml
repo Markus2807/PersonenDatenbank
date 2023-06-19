@@ -20,7 +20,8 @@
                    x:Name="UserName_Entry"
                    Placeholder="z.B. Max Mustermann"
                    PlaceholderColor="DarkGray"
-                   TextColor="Black">
+                   TextColor="Black"
+                   Completed="OnUserName_Completed">
                 
             </Entry>
             
