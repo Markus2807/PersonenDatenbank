@@ -16,7 +16,7 @@
             <Button Text="Change Color"
                     TextColor="White"
                     BackgroundColor="{x:DynamicResource Primary}"
-                    Clicked="Button_OnClicked"
+                    Pressed="Button_OnClicked"
                     Released="Button_Released"/>
         </StackLayout>
     </ContentPage.Content>
