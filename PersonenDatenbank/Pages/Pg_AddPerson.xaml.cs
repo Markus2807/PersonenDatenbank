@@ -53,7 +53,8 @@ public partial class Pg_AddPerson : ContentPage
         ///
         
         /// clear entries
-        /// 
+        ///
+        this.Person = new Person();
     }
 
     private void OnUserName_Completed(object Sender, EventArgs E)
