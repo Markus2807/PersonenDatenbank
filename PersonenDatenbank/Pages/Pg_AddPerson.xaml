@@ -100,8 +100,7 @@
                    Grid.ColumnSpan="2"
                    x:Name="Button_AddEdit"
                    Text="Hinzufügen/Bearbeiten"
-                   TextColor="White"
-                   BackgroundColor="{x:DynamicResource Primary}"
+                   Style="{x:StaticResource DefaultButtonStyle}"
                    Clicked="AddModify_Clicked"
                    VerticalOptions="End"/>
             
