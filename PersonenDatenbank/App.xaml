@@ -21,9 +21,8 @@
                         <Setter Property="FontSize" Value="Large"/>
                     </Style>
                     
-                    <Style x:Key="HeadLineFontStyle" TargetType="Label">
-                        <Setter Property="TextColor" Value="{StaticResource Black}"/>
-                        <Setter Property="FontSize" Value="Large"/>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="DarkGray"/>
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>

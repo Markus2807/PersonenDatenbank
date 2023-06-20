@@ -1,32 +1,59 @@
 
+using System.Linq.Expressions;
+using PersonenDatenbank.Model;
+
 namespace PersonenDatenbank.Pages;
 
 public partial class Pg_AddPerson : ContentPage
 {
+    private Person _Person = new Person();
+
+    public Person Person
+    {
+        get => _Person;
+        set
+        {
+            _Person = value;
+            OnPropertyChanged();
+        }
+    }
+    
     public Pg_AddPerson()
     {
         InitializeComponent();
+        BindingContext = this;
         UserBirthDate_Picker.MinimumDate = new DateTime(1900, 01, 01);
         UserBirthDate_Picker.MaximumDate = DateTime.Now.Date;
 
     }
 
-    private void AddModify_Clicked(object Sender, EventArgs E)
+    private async void AddModify_Clicked(object Sender, EventArgs E)
     {
-        string UserName = UserName_Entry.Text;
-        DateTime BirthDate = UserBirthDate_Picker.Date;
-        string UserSex = (string)UserSex_Picker.SelectedItem;
-        bool IsMarried = UserIsMerried_Switch.IsChecked;
-        string isMarried = IsMarried ? "Verheiratet" : "Unverheiratet";
+        string isMarried = Person.IsMarried ? "Verheiratet" : "Unverheiratet";
 
-        DisplayAlert($"Speichern",
+        var DisplayAlert_Result = await DisplayAlert($"Speichern",
             $"Möchten Sie die folgenden Daten so speicher?\n" +
-            $"Name: {UserName}\n" +
-            $"Geburtstag: {BirthDate:d}\n" +
-            $"Geschlecht: {UserSex}\n" +
+            $"Name: {Person.UserName}\n" +
+            $"Geburtstag: {Person.BirthDate:d}\n" +
+            $"Geschlecht: {Person.Gender}\n" +
             $"{isMarried}",
             accept: "Speichern",
             cancel: "Abbrechen");
+
+        if (DisplayAlert_Result == true)
+        {
+            Save();
+        }
+    }
+
+    private void Save(
+        )
+    {
+        /// Add Person to List
+        ///
+        
+        /// clear entries
+        /// 
     }
 
     private void OnUserName_Completed(object Sender, EventArgs E)
@@ -34,5 +61,10 @@ public partial class Pg_AddPerson : ContentPage
        /// Set the new focus to the Birthday DatePicker
        ///
        UserBirthDate_Picker.Focus();
+    }
+
+    private void OnGenderSelected(object Sender, EventArgs E)
+    {
+        Person.Gender = (Gender)(Sender as Picker).SelectedIndex;
     }
 }

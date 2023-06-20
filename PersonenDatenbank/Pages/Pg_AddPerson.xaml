@@ -32,6 +32,7 @@
                    Placeholder="z.B. Max Mustermann"
                    PlaceholderColor="DarkGray"
                    TextColor="Black"
+                   Text="{Binding Person.UserName}"
                    Completed="OnUserName_Completed">
                 
             </Entry>
@@ -49,6 +50,7 @@
                    Grid.Column="1"
                    x:Name="UserBirthDate_Picker"
                    TextColor="Black"
+                   Date="{Binding Person.BirthDate}"
                    >
                 
             </DatePicker>
@@ -66,6 +68,7 @@
                    Grid.Column="1"
                    x:Name="UserSex_Picker"
                    Title="Wählen Sie bitte ein Geschlecht"
+                   SelectedIndexChanged="OnGenderSelected"
                    TextColor="Black">
                 <Picker.ItemsSource>
                        <x:Array Type="{x:Type x:String}">
@@ -90,6 +93,7 @@
                    x:Name="UserIsMerried_Switch"
                    Color="Black"
                    HorizontalOptions="End"
+                   IsChecked="{Binding Person.IsMarried}"
                    >
                        
             </CheckBox>
