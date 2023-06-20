@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonenDatenbank.Pages.Pg_AddPerson"
-             BackgroundColor="White">
+             Style="{x:StaticResource BasicPageStyle}">
     <ContentPage.Content>
         <Grid
                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
@@ -104,7 +104,6 @@
                    Grid.ColumnSpan="2"
                    x:Name="Button_AddEdit"
                    Text="Hinzufügen/Bearbeiten"
-                   Style="{x:StaticResource DefaultButtonStyle}"
                    Clicked="AddModify_Clicked"
                    VerticalOptions="End"/>
             

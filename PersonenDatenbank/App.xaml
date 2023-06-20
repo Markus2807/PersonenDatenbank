@@ -9,7 +9,7 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary>
-                    <Style x:Key="DefaultButtonStyle" TargetType="Button">
+                    <Style TargetType="Button">
                         <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
                         <Setter Property="TextColor" Value="{StaticResource White}"/>
                         <Setter Property="BorderColor" Value="Black"/>
@@ -23,6 +23,10 @@
                     
                     <Style TargetType="Label">
                         <Setter Property="TextColor" Value="DarkGray"/>
+                    </Style>
+                    
+                    <Style x:Key="BasicPageStyle" TargetType="ContentPage">
+                        <Setter Property="BackgroundColor" Value="White"></Setter>
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>

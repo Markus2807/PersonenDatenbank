@@ -2,7 +2,8 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonenDatenbank.Pages.Pg_Persons">
+             x:Class="PersonenDatenbank.Pages.Pg_Persons"
+             Style="{x:StaticResource BasicPageStyle}">
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Persons}">
@@ -19,7 +20,8 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            <Button Text="Person löschen" Clicked="OnDeletePerson_clicked"/>
+            <Button Text="Person löschen" Clicked="OnDeletePerson_clicked"
+                    />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
