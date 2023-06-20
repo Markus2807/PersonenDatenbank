@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PersonenDatenbank"
+             xmlns:pages="clr-namespace:PersonenDatenbank.Pages"
+             x:Class="PersonenDatenbank.AppShell"
+             Shell.FlyoutBehavior="Flyout">
+    
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="HomePage">
+        
+    </ShellContent>
+    
+    <ShellContent
+        Title="Add"
+        ContentTemplate="{DataTemplate pages:Pg_AddPerson}"
+        Route="AddPage">
+        
+    </ShellContent>
+    
+    <ShellContent
+        Title="Persons"
+        ContentTemplate="{DataTemplate pages:Pg_Persons}"
+        Route="Persons">
+        
+    </ShellContent>
+    
+</Shell>

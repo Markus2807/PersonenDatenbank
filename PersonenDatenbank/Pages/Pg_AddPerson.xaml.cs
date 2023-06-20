@@ -66,6 +66,6 @@ public partial class Pg_AddPerson : ContentPage
 
     private void OnGenderSelected(object Sender, EventArgs E)
     {
-        Person.Gender = (Gender)(Sender as Picker).SelectedIndex;
+        Person.Gender = (Gender)new GenderConverter().Convert((Sender as Picker).SelectedIndex,null,null,null);
     }
 }
