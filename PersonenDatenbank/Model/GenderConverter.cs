@@ -12,7 +12,7 @@ public class GenderConverter : IValueConverter
         if (value is not int)
             throw new ArgumentException("GenderConverter argument not supported. Only integer is supported for convertion.");
         
-        return (Gender)value;
+        return (Gender)((byte)value);
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
