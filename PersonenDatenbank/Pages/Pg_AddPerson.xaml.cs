@@ -1,5 +1,7 @@
 
 using System.Linq.Expressions;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using PersonenDatenbank.Model;
 
 namespace PersonenDatenbank.Pages;
@@ -49,7 +51,13 @@ public partial class Pg_AddPerson : ContentPage
     private void Save(
         )
     {
-        new Services.ToastService().ShowToast($"{Person.UserName} wurde der Liste hinzugefügt",true);
+        string text = $"{Person.UserName} wurde der Liste hinzugefügt";
+        /// selbst erstellter Toast für Android
+        //new Services.ToastService().ShowToast(text,true);
+        
+        /// CommunityToolkit Toast für alle Plattformen
+        var toast = Toast.Make(text, ToastDuration.Long);
+        toast.Show();
         
         /// Add Person to List
         ///
