@@ -4,9 +4,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PersonenDatenbank"
              xmlns:pages="clr-namespace:PersonenDatenbank.Pages"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="PersonenDatenbank.AppShell"
              Shell.FlyoutBehavior="Flyout">
     
+    <Shell.FlyoutBackgroundColor/>
+    
+    <Shell.FlyoutHeader>
+            <Grid BackgroundColor="Black">
+                <Image Aspect="AspectFill"
+                       Source="splashscreen.png"
+                       Opacity="0.6" />
+                <Label Text="Personendatenbank"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+    </Shell.FlyoutHeader>
     
     <ShellContent
         Title="Home"
@@ -14,6 +29,7 @@
         Route="HomePage">
         
     </ShellContent>
+    
     
     <ShellContent
         Title="Add"
@@ -28,5 +44,19 @@
         Route="Persons">
         
     </ShellContent>
+    
+    <MenuItem Text="About"></MenuItem>
+    
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Label Text="Imprint"
+                   TextColor="GhostWhite"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                   TextColor="GhostWhite"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
     
 </Shell>

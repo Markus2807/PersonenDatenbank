@@ -29,6 +29,6 @@ public partial class Pg_Persons : ContentPage
 
     private void OnDeletePerson_clicked(object Sender, EventArgs E)
     {
-        
+        AppShell.Current.GoToAsync("settings");
     }
 }

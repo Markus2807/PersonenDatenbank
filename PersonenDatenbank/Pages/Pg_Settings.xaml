@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonenDatenbank.Pages.Pg_Settings">
+    <ContentPage.Content>
+        <Label Text="Settings page routed from Persons page. Can we go back via Android hardware button here?"></Label>
+    </ContentPage.Content>
+</ContentPage>
