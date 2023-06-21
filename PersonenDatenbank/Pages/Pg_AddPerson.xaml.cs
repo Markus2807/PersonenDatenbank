@@ -49,6 +49,8 @@ public partial class Pg_AddPerson : ContentPage
     private void Save(
         )
     {
+        new Services.ToastService().ShowToast($"{Person.UserName} wurde der Liste hinzugefügt",true);
+        
         /// Add Person to List
         ///
         
